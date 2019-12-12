@@ -1,0 +1,13 @@
+{
+  "name": "@viq/functions",
+  "version": "0.0.1",
+  "description": "viq.app | Cloud Functions",
+  "main": "functions.js",
+  "author": "Tommy CodeBox",
+  "license": "MIT",
+  "keywords": [
+    "viq",
+    "cloud",
+    "functions"
+  ]
+}
