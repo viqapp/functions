@@ -1,6 +1,6 @@
 # Cloud Functions | viq.app
 
-> ### Package to create and use viq.app cloud functions
+> Package to create and use viq.app cloud functions
 
 ## Installation
 
@@ -16,15 +16,21 @@ $ npm install @viq/functions
 const functions = require('@viq/functions');
 
 // Express-style request accepting all HTTP methods
-exports.funcName = functions.onReq((req, res) => {
-  res.send('Yes');
+functions.name('helloWorld').onReq((req, res) => {
+  res.send('Hello world');
 });
 
 // Adding middleware
 const someMiddleware = (req, res, next) => {
   req.foo = 'bar';
 };
-exports.anotherFunc = functions.middleware(someMiddleware).onReq((req, res) => {
-  res.send(req.foo); // => 'bar'
-});
+
+functions
+  .name('foo')
+  .mid(someMiddleware)
+  .onReq((req, res) => {
+    res.send(req.foo); // => 'bar'
+  });
+
+module.exports = functions;
 ```
