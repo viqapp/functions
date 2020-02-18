@@ -7,6 +7,10 @@
 In your project directory run:
 
 ```bash
+# using yarn
+$ yarn add @viq/functions
+
+# using npm
 $ npm install @viq/functions
 ```
 
@@ -16,7 +20,7 @@ $ npm install @viq/functions
 const functions = require('@viq/functions');
 
 // Express-style request accepting all HTTP methods
-functions.name('helloWorld').onReq((req, res) => {
+functions.path('/helloWorld').onReq((req, res) => {
   res.send('Hello world');
 });
 
