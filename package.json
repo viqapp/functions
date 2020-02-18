@@ -1,6 +1,6 @@
 {
   "name": "@viq/functions",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "viq.app | Cloud Functions",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
