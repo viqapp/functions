@@ -30,7 +30,7 @@ const someMiddleware = (req, res, next) => {
 };
 
 functions
-  .name('foo')
+  .path('/foo')
   .mid(someMiddleware)
   .onReq((req, res) => {
     res.send(req.foo); // => 'bar'
