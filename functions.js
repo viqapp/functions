@@ -1,17 +1,17 @@
 class Functions {
   constructor() {}
-  name(name) {
-    this[name] = {};
-    this[name].middleware = [];
-    this[name].onReq = callback => {
-      this[name].callback = callback;
-      return this[name];
+  path(path) {
+    this[path] = {};
+    this[path].middleware = [];
+    this[path].onReq = callback => {
+      this[path].callback = callback;
+      return this[path];
     };
-    this[name].mid = (...middleware) => {
-      this[name].middleware = middleware || [];
-      return this[name];
+    this[path].mid = (...middleware) => {
+      this[path].middleware = middleware || [];
+      return this[path];
     };
-    return this[name];
+    return this[path];
   }
 }
 
