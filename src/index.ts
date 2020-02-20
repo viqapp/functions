@@ -11,17 +11,18 @@ class CloudFunction {
   static middleware?: Middleware[];
   static callback?: Callback;
 }
+
+const checkSlash = (path: string): string => {
+  if (path.split('').shift() !== '/') return '/' + path;
+  return path;
+};
+
 class Functions {
   [key: string]: CloudFunction | any;
 
-  private checkSlash(path: string): string {
-    if (path.split('').shift() !== '/') return '/' + path;
-    return path;
-  }
-
   /** Defines a `/path` for function to be accessed at */
   path(path: string): CloudFunction {
-    path = this.checkSlash(path);
+    path = checkSlash(path);
     this[path] = {};
     this[path].middleware = [];
     this[path].onReq = (callback: Callback) => {
